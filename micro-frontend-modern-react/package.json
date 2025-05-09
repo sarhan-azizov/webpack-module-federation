@@ -1,0 +1,33 @@
+{
+  "name": "micro-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx webpack serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.8",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
+  },
+  "dependencies": {
+    "@lightspeed/design-system-css": "^43.0.0",
+    "@lightspeed/design-system-react": "^43.0.0",
+    "@lightspeed/unified-components-helios-theme": "^0.6.0",
+    "@lightspeed/unified-react-components": "^0.15.0",
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}
