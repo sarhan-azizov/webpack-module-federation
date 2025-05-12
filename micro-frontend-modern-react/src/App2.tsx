@@ -1,17 +1,32 @@
 import { createRoot } from 'react-dom/client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Button } from '@lightspeed/design-system-react';
 import "@lightspeed/design-system-css";
 
-const App2: React.FC = (props) => {
+const App2: React.FC = (props: any) => {
     const [state, setState] = useState(0);
+    const [parentState, setParentState] = useState(props.initialState);
+
+
+    useEffect(() => {
+        const handleStateChange = (event: CustomEvent<{ state: number }>) => {
+            console.log('Received state from parent:', event.detail.state);
+            setParentState(event.detail.state);
+        };
+
+        window.addEventListener('parentStateChange', (handleStateChange as EventListener));
+
+        return () => {
+            window.removeEventListener('parentStateChange', handleStateChange as EventListener);
+        };
+    }, []);
+
     return (
         <>
             <h1 onClick={() => setState((prevState) => prevState + 1)}>
-                Micro-Frontend | React v{React.version} | {state}
+                Micro-Frontend | React v{React.version} | local state: {state} | parent state: {parentState}
             </h1>
-            <div>Host props: {JSON.stringify(props)}</div>
             <div style={{ marginLeft: '20px' }}>
                 <Button>Helios Button</Button>
             </div>
