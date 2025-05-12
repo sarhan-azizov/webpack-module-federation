@@ -7,6 +7,9 @@ module.exports = {
   entry: './src/index.tsx',
   mode: 'development',
   devServer: {
+    // server: {
+    //   type: 'https',
+    // },
     static: path.join(__dirname, 'public'),
     port: 3005,
     host: '0.0.0.0',

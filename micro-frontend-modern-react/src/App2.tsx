@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import React, { useState, useEffect } from 'react';
 
-import { Button } from '@lightspeed/design-system-react';
+import { Carousel, Button } from '@lightspeed/design-system-react';
 import "@lightspeed/design-system-css";
 
 const App2: React.FC = (props: any) => {
@@ -28,8 +28,33 @@ const App2: React.FC = (props: any) => {
                 Micro-Frontend | React v{React.version} | local state: {state} | parent state: {parentState}
             </h1>
             <div style={{ marginLeft: '20px' }}>
-                <Button>Helios Button</Button>
+                <div
+                className="vd-card"
+                style={{
+                    width: 450
+                }}
+                >
+                    <Carousel>
+                        <img
+                        alt="alt 1"
+                        src="https://placehold.co/400x400?text=img 1"
+                        />
+                        <img
+                        alt="alt 2"
+                        src="https://placehold.co/400x400?text=img 2"
+                        />
+                        <img
+                        alt="alt 3"
+                        src="https://placehold.co/400x400?text=img 3"
+                        />
+                        <img
+                        alt="alt 4"
+                        src="https://placehold.co/400x400?text=img 4"
+                        />
+                    </Carousel>
+                </div>
             </div>
+            <Button>Helios Button</Button>
         </>
     );
 };
